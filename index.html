@@ -287,14 +287,15 @@
 
     <canvas id="confetti"></canvas>
 
-    <!-- অডিও ফাইল -->
+    <!-- তোমার আপলোড করা অডিও ফাইলের হুবহু নাম -->
     <audio id="bgMusic" preload="auto">
-        <source src="song.mp3" type="audio/mpeg">
+        <source src="Full%20Video%20Tera%20Yaar%20Hoon%20Main%20Sonu%20Ke%20Titu%20Ki%20Sweety%20Arijit%20Singh%20Rochak%20Kohli%20Song%202018.mp3" type="audio/mpeg">
     </audio>
 
     <div class="card">
         <div class="photo-frame">
-            <img src="borsha.jpg" alt="Borsha">
+            <!-- তোমার আপলোড করা ছবির হুবহু নাম -->
+            <img src="f7ac700f-038c-4c33-a49b-99663c71422d.png" alt="Borsha">
         </div>
 
         <h1>Happy Birthday Borsha!</h1>
@@ -334,7 +335,6 @@
         let candleBlown = false;
         let songStarted = false;
 
-        // "Tu jo rootha toh kaun hansega..." লাইনটি অডিওর 32 সেকেন্ড থেকে শুরু হয়
         const START_TIME = 32;
 
         function playSongFromVerse() {
@@ -351,7 +351,6 @@
             });
         }
 
-        // গান শেষ হলে আবার 32 সেকেন্ড থেকে লুপ হবে
         bgMusic.addEventListener('ended', () => {
             bgMusic.currentTime = START_TIME;
             bgMusic.play();
@@ -388,7 +387,6 @@
             blowCandle();
         }
 
-        // ফোনের মাইক্রোফোনে ফুঁ শনাক্ত করার ফিচার
         async function enableMicBlow() {
             const micBtn = document.getElementById('micBtn');
             try {
@@ -414,7 +412,6 @@
                     }
                     let average = sum / dataArray.length;
 
-                    // ফুঁ দিলে বাতাসের শব্দে এভারেজ ভলিউম বেড়ে যায়
                     if (average > 55) {
                         blowCandle();
                         stream.getTracks().forEach(track => track.stop());
@@ -428,7 +425,6 @@
             }
         }
 
-        // Confetti Animation
         const canvas = document.getElementById('confetti');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
